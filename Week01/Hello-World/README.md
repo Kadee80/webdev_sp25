@@ -10,7 +10,7 @@
 - Browser Add Ons – Google Developer Tools and FireBug
 - [VS Code](https://code.visualstudio.com/download) (or Coda, Textmate, TextWrangler. Class tutorials will be using **VS Code** (These editors are great because they have useful packages to instal)
 
-  - Honestly, I can't say it better than the Walkthroughs on VS Code itself, you can easily access them by opening Atom without any of your files/projects open.
+  - Honestly, I can't say it better than the Walkthroughs on VS Code itself, you can easily access them by opening VS Code without any of your files/projects open.
   - Extensions (You'll thank me later) Extensions can be searched for, installed and configured by clicking the 5th nav icon on the left (hover to see descriptions of any NavBar item) or by the shortcut `Shift+Cmd+X` (Mac) or `Shift+Ctrl+X` (Windows). Once the extension browser is open search for and install:
     - Prettier - Code formatter
     - Prettify JSON
