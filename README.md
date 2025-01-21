@@ -136,7 +136,7 @@ If you are student with a disability who is requesting accommodations, please co
 
 ## Notable Dates
 
-_Monday, Feb 3, 2025_- Last day to drop/add on Albert for all students. Last day to drop Fall 2024 classes and not receive a grade of 'W'.
+_Monday, Feb 3, 2025_- Last day to drop/add on Albert for all students. Last day to drop Spring 2025 classes and not receive a grade of 'W'.
 
 _Monday, Feb 17, 2025_ - Presidents’ Day, No classes scheduled / University Holiday
 
