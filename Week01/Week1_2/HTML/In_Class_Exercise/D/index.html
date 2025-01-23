@@ -9,12 +9,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The title tag shows up in the browser tab and as the big blue link in search results -->
     <title>HTML 101</title>
+    <style>
+      /* Internal Style Sheet */
+      img {
+        width: 100%;
+      }
+
+      p {
+        color: chartreuse;
+      }
+    </style>
   </head>
   <body>
     <!-- everything inside the body tag shows up to the user unless
      modified to not be visible with css -->
 
     <!-- ONLY 1 H1 per page -->
-    <h1>Hello World!</h1>
+    <h1 id="top">
+      Heading 1 is the most important text on the page. It should be unique, aka
+      only 1.
+    </h1>
+    <h2>Heading 2, as the numbers get bigger, the font gets smaller.</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <!-- horizontal rule aka page divider -->
+    <hr />
+    <!-- Most text on your page will likely be in a p tag -->
+
+    <p>
+      <em>Lorem ipsum dolor sit amet,</em> consectetur adipiscing elit. Ut ante
+      odio, ultricies sed ultricies a, suscipit nec leo. Cras interdum pulvinar
+      lacus et lobortis. Aenean vel semper nisl. <br />Etiam pharetra
+      sollicitudin urna, at condimentum nunc porttitor at. Ut nulla nulla,
+      fringilla a purus eget, <strong>mattis sodales dui.</strong> Phasellus
+      rutrum leo leo. In hac habitasse platea dictumst. Aenean id convallis est,
+      eget porta odio.
+    </p>
+    <p>
+      Integer laoreet, dui quis volutpat faucibus, lacus velit luctus massa, nec
+      ornare libero diam nec eros. Ut vulputate neque et metus sodales, sit amet
+      congue libero auctor. Etiam consequat imperdiet libero, sed tempor turpis
+      laoreet in. Sed sit amet ligula molestie, tempor dui eu, cursus dolor.
+      Praesent non nunc ut purus accumsan condimentum quis id turpis. Vestibulum
+      sollicitudin erat eu mollis lacinia.
+      <a
+        href="https://www.translate.com/dictionary/latin-english/pellentesque-8357151"
+        target="_blank"
+        >Pellentesque orci nunc,</a
+      >
+      iaculis nec turpis ac, bibendum suscipit dolor. Proin lobortis lobortis
+      blandit. Vestibulum a convallis velit, vel maximus tortor. Vestibulum nisl
+      augue, molestie molestie eleifend in, gravida elementum ligula. Curabitur
+      tristique semper felis, vel ultrices odio efficitur in. Nam suscipit, ante
+      non blandit volutpat, magna metus semper ante, ut elementum nisl eros eget
+      sem. Etiam eget enim sed libero gravida molestie ut eu metus.
+    </p>
+    <p>
+      Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+      inceptos himenaeos.
+      <span style="color: red; font-size: 20px"
+        >Proin sollicitudin leo nec leo dignissim tincidunt. Quisque justo nibh,
+        vehicula in maximus ut, pulvinar nec quam. Praesent sed aliquet sapien,
+        quis pharetra orci.</span
+      >
+      Curabitur semper mauris sit amet orci varius tempor. Praesent varius
+      libero at porta pharetra. Nulla facilisi. Sed sagittis, nunc ut
+      pellentesque scelerisque, tellus lectus lacinia nisi, vitae vehicula neque
+      orci vitae eros. Nullam felis nibh, aliquam et fermentum eu, commodo
+      pulvinar nisl. Sed eros diam, viverra id vestibulum ut, placerat ut
+      sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+    <hr />
+
+    <h2>Buttermilk Pancakes</h2>
+    <!-- An image sourced from another site on the web -->
+    <img
+      src="https://tornadoughalli.com/wp-content/uploads/2021/12/BUTTERMILK-PANCAKE-RECIPE-3.jpg"
+      alt="A tall stack of fluffy pancakes"
+      style="width: 5%"
+    />
+    <!-- An image loaded from a file that is a sibling of the html file in the same project-->
+    <img src="pancake.jpg" alt="Pancakes with butter." />
+    <!-- An image loaded from a subfolder withing the same project -->
+    <img src="img/pancake.jpg" alt="Something about butter." />
+
+    <p>This is a paragraph describing my recipe.</p>
+    <!-- UL = unordered list, bulleted -->
+    <ul>
+      <li><a href="#">Flour</a></li>
+      <li>Sugar</li>
+      <li>
+        Milk
+        <ol>
+          <li>One Percent</li>
+          <li>Whole Milk</li>
+          <li>Heavy Cream</li>
+        </ol>
+      </li>
+
+      <li>Butter</li>
+      <li>Eggs</li>
+    </ul>
+    <!-- OL = ordered list order/numbering matters -->
+    <ol>
+      <li>Mix it up.</li>
+      <li>Heat it up.</li>
+      <li>Pour some batter.</li>
+      <li>
+        Flip it.
+        <ul>
+          <li>One Percent</li>
+          <li>Whole Milk</li>
+          <li>Heavy Cream</li>
+        </ul>
+      </li>
+      <li>Eat it.</li>
+    </ol>
+
+    <!-- Link to another page within your own site/project -->
+    <a href="about/index.html">Go To About Page</a>
+
+    <!-- Link to element on same page -->
+    <a href="#top">Back to Top</a>
   </body>
 </html>
