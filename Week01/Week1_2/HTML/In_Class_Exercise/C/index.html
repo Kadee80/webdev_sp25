@@ -9,12 +9,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The title tag shows up in the browser tab and as the big blue link in search results -->
     <title>HTML 101</title>
+    <style>
+      /* tag selector = any p tag will get these styles, unless they have thier own style applied */
+      p {
+        color: green;
+      }
+      /* class selectors always begin with .  the style gets applied whereever class="that style"*/
+      .nyu_text {
+        color: blueviolet;
+      }
+      /* ID selector always starts with #. IDs are unique, cannot be reuused on this page */
+      #top {
+        color: cornflowerblue;
+      }
+    </style>
   </head>
   <body>
     <!-- everything inside the body tag shows up to the user unless
      modified to not be visible with css -->
 
     <!-- ONLY 1 H1 per page -->
-    <h1>Hello World!</h1>
+    <h1 id="top">
+      Heading 1 is the most important text on the page. Only one per page.
+    </h1>
+    <h2>
+      As the heading numbers get bigger, the text gets smaller. All still
+      boldish weight, and they are all more important than any other text tags.
+    </h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <!-- horizontal rule aka page divider -->
+    <hr />
+    <!-- Most text will likely be p tags -->
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis
+      est eget odio molestie lacinia. Phasellus ornare sapien risus, nec aliquam
+      lectus rutrum et. Cras auctor sed quam vel auctor. <br />Vestibulum tempor
+      ultricies mi, a lobortis quam vehicula ut. Etiam fringilla aliquet mi quis
+      auctor. Proin vel metus sit amet ligula porttitor posuere. Sed ex leo,
+      euismod quis sodales nec, dictum at dolor. Ut commodo erat a ipsum
+      efficitur consectetur. <br />Aliquam molestie vulputate fermentum.
+      Pellentesque nec porttitor erat, ac egestas magna. Maecenas et felis
+      scelerisque, porta mi quis, sodales est. Pellentesque dapibus augue ut
+      felis luctus pharetra.
+    </p>
+    <p>
+      Morbi mattis suscipit ligula sed dictum. Maecenas tincidunt elit sed
+      tincidunt laoreet. Curabitur vulputate magna sit amet velit sollicitudin
+      scelerisque.
+      <a
+        href="https://www.lingq.com/en/learn-latin-online/translate/la/pellentesque/"
+        target="_blank"
+        >Pellentesque</a
+      >
+      fringilla eu lectus et scelerisque. Aenean id mauris rhoncus, pretium
+      felis vitae, semper justo. Integer fringilla velit orci, vel posuere metus
+      scelerisque eu.
+      <span style="color: red">Mauris ut enim dui.</span> Aliquam at hendrerit
+      lacus. Cras et tortor vitae magna porta convallis. Mauris eleifend nulla
+      nunc, quis elementum nisi tincidunt quis. Sed diam tellus, varius vel
+      porta in, viverra nec lacus. Vestibulum et convallis diam. Maecenas
+      consequat hendrerit sem sed ullamcorper.
+    </p>
+    <p class="nyu_text">
+      <em>Etiam eu lobortis turpis.</em> Cras mi diam, condimentum eu quam ac,
+      mattis vestibulum libero. In pretium pellentesque dolor vel hendrerit. Sed
+      elementum tristique justo quis eleifend. Phasellus mi augue, maximus ac
+      efficitur in, sodales a urna.
+      <strong>Proin et venenatis erat, sed faucibus ante.</strong>
+      Nunc efficitur libero id tincidunt faucibus. Maecenas est est,
+      sollicitudin in pellentesque et, faucibus eget tortor. Donec urna ipsum,
+      placerat vel rhoncus eu, finibus at augue. Proin hendrerit justo vulputate
+      tincidunt aliquam. Sed tincidunt dictum feugiat. Mauris sit amet diam at
+      orci mattis dapibus. Nullam ullamcorper ut neque eu consequat.
+    </p>
+
+    <h2>Buttermilk Pancakes</h2>
+    <p>
+      A description of pancakes. No one wants yo read this, but everyone seems
+      to write a bunch here on recipe sites.
+    </p>
+    <!-- This is an image loaded from an external URL -->
+    <img
+      src="https://sugarspunrun.com/wp-content/uploads/2019/03/Best-buttermilk-pancake-recipe-14-of-16.jpg"
+      alt="The fluffiest buttermilk pancakes you ever did see!"
+      width="100px"
+      height="100px"
+    />
+    <!-- Image loaded from same folder (right next to) as html file -->
+    <img src="pancake.webp" alt="Pancake right next to index file." />
+
+    <!-- Image loaded from a folder within the project -->
+    <img
+      src="img/pancake.jpg"
+      alt="Pancake in the img folder next to index file."
+    />
+    <ul>
+      <li>Flour</li>
+      <li>Sugar</li>
+      <li>Eggs</li>
+      <li>Butter</li>
+    </ul>
+
+    <ol>
+      <li>Mix it up.</li>
+      <li>Heat it up.</li>
+      <li>Pour some batter</li>
+      <li>Flip it.</li>
+      <li>Eat it.</li>
+    </ol>
+
+    <hr />
+
+    <ul>
+      <li>Flour</li>
+      <li>Sugar</li>
+      <li>Eggs</li>
+      <li>
+        Butter
+        <ol>
+          <li>Sublist-item 1</li>
+          <li>Sublist-item 2</li>
+          <li>Sublist-item 3</li>
+        </ol>
+      </li>
+    </ul>
+
+    <ol>
+      <li>Mix it up.</li>
+      <li>Heat it up.</li>
+      <li>Pour some batter</li>
+      <li>Flip it.</li>
+      <li>
+        Eat it.
+        <ul>
+          <li>Sublist-item 1</li>
+          <li>Sublist-item 2</li>
+          <li>Sublist-item 3</li>
+        </ul>
+      </li>
+    </ol>
+
+    <!-- Anchor tag linking to another element on the same page by ID -->
+    <a href="#top">Back to top</a>
   </body>
 </html>
