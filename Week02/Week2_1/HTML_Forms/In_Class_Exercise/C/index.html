@@ -7,5 +7,65 @@
   </head>
   <body>
     <h1>HTML Form Elements</h1>
+
+    <!-- Form using basic input types -->
+    <!-- For more on form elements see w3 school tutorials https://www.w3schools.com/html/html_form_elements.asp -->
+    <p>
+      The form action usually contains a file or link to process the form fields
+      once a user clicks submit.
+    </p>
+    <p>
+      For now, the main form attribute to worry about is the method.
+      <a
+        href="https://www.w3schools.com/tags/att_form_method.asp"
+        target="_blank"
+        >See w3 schools docs.</a
+      >
+    </p>
+    <form
+      action="create_profile.js"
+      name="user_create"
+      target="_self"
+      method="POST"
+    >
+      <!-- fieldsets are for grouping input elements, they are labeled by the legend tag within it -->
+      <fieldset>
+        <legend>Simple Text Input</legend>
+        <p>
+          This is your most basic text input. We change input types bu changing
+          the value of the type attribute.
+        </p>
+        <!-- label for attribute should match input name attribute -->
+        <label for="first_name">First Name: </label>
+        <input type="text" name="first_name" disabled />
+        <br />
+        <br />
+        <label for="last_name">Last Name:</label>
+        <input
+          type="text"
+          name="last_name"
+          maxlength="10"
+          placeholder="Smith"
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Text Area</legend>
+        <label for="why_class">Why did you take this class?</label>
+        <textarea name="why_class" cols="50" rows="5" required></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Common Input Types</legend>
+        <label for="cost">Number:</label>
+        <input name="cost" type="number" min="10" max="100" step=".01" />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" />
+        <br />
+        <label for="favorite_color">Whats your favorite color?</label>
+        <input type="color" name="favorite_color" />
+      </fieldset>
+    </form>
   </body>
 </html>
