@@ -7,5 +7,118 @@
   </head>
   <body>
     <h1>HTML Form Elements</h1>
+    <!-- Form using basic input types -->
+    <!-- For more on form elements peep the w3 schools tutorials https://www.w3schools.com/html/html_form_elements.asp -->
+
+    <p>
+      The form action attribute usually contains a link to a file or location to
+      process the form data.
+    </p>
+    <!-- <form
+      action="js/create-profile.js"
+      method="GET"
+      target="_self"
+      name="user-create"
+    ></form> -->
+    <p>
+      The name attribute for the form element = how a script can differentiate
+      this form from others. Or it tells us what table in the DB to write to.
+    </p>
+    <form name="user-create" method="GET">
+      <fieldset>
+        <legend>Simple Text Inputs</legend>
+        <p>
+          This is your most basic text input. We change input types with the
+          type attribute.
+        </p>
+        <label for="first-name">First Name</label>
+        <input name="first-name" type="text" />
+
+        <label for="last-name">Last Name</label>
+        <input
+          name="last-name"
+          type="text"
+          maxlength="10"
+          placeholder="Smith"
+          required
+        />
+      </fieldset>
+      <fieldset>
+        <legend>Common Input Types</legend>
+        <label for="age">Age: </label>
+        <input name="age" type="number" step="0.01" max="100" min="10" />
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" />
+
+        <label for="color">Favorite Color</label>
+        <input type="color" name="color" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Checkboxes</legend>
+        <p>
+          Checkboxes allow the user to select more than one option/value for the
+          same field.
+          <em
+            >Each checkbox in the same group has the same name but different
+            values!</em
+          >
+        </p>
+
+        <p>What pets do you have?</p>
+        <input name="pet" type="checkbox" value="dog" /><label>Dog</label>
+        <input name="pet" type="checkbox" value="cat" /><label>Cat</label>
+        <input name="pet" type="checkbox" value="chicken" /><label
+          >Chicken</label
+        >
+        <input name="pet" type="checkbox" value="lizard" /><label>Lizard</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Radio Group</legend>
+        <p>
+          Radio buttons allow the user to select ONLY one option/value for the
+          same field/group
+          <em
+            >Each radio in the same group has the same name but different
+            values!</em
+          >
+        </p>
+        <p>Which pet is your favorite?</p>
+        <input name="favorite" type="radio" value="dog" /><label>Dog</label>
+        <input name="favorite" type="radio" value="cat" /><label>Cat</label>
+        <input name="favorite" type="radio" value="chicken" /><label
+          >Chicken</label
+        >
+        <input name="favorite" type="radio" value="lizard" /><label
+          >Lizard</label
+        >
+      </fieldset>
+      <p>Text areas are for sentence or paragraph long responses.</p>
+      <label for="question">What is your question?</label>
+      <textarea name="question" cols="50" rows="5"></textarea>
+
+      <fieldset>
+        <legend>Select Option Dropdowns</legend>
+        <label for="state">Pick a State</label>
+        <select name="state">
+          <optgroup label="New States">
+            <option value="NY">New York</option>
+          </optgroup>
+          <option value="NJ">New Jersey</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NM">New Mexico</option>
+        </select>
+      </fieldset>
+
+      <input type="button" value="Submit" name="user-submit" disabled />
+      <button
+        title="This is a much better submit button IMO"
+        name="submit-user"
+      >
+        Submit Form
+      </button>
+    </form>
   </body>
 </html>
