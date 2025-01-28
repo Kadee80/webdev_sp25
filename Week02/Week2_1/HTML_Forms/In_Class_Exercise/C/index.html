@@ -22,12 +22,15 @@
         >See w3 schools docs.</a
       >
     </p>
-    <form
-      action="create_profile.js"
+    <!-- Here is a commented out opening form tag with some example attributes, x
+     we are not using this one for todays demo since we do not have any scripts or Dbs to post to -->
+    <!-- <form
       name="user_create"
+      method="GET"
+      action="create_profile.js"
       target="_self"
-      method="POST"
-    >
+    > -->
+    <form name="user_create">
       <!-- fieldsets are for grouping input elements, they are labeled by the legend tag within it -->
       <fieldset>
         <legend>Simple Text Input</legend>
@@ -58,7 +61,14 @@
       <fieldset>
         <legend>Common Input Types</legend>
         <label for="cost">Number:</label>
-        <input name="cost" type="number" min="10" max="100" step=".01" />
+        <input
+          name="cost"
+          type="number"
+          min="10"
+          max="100"
+          step=".01"
+          required
+        />
         <br />
         <label for="password">Password:</label>
         <input type="password" name="password" />
@@ -66,6 +76,58 @@
         <label for="favorite_color">Whats your favorite color?</label>
         <input type="color" name="favorite_color" />
       </fieldset>
+
+      <fieldset>
+        <legend>Check Boxes</legend>
+        <p>
+          Check Boxes all the user to select more than one option at once. All
+          grouped checkbox inputs share the
+          <em>same name but different values.</em>
+        </p>
+        <p>What pets do you have?</p>
+        <input type="checkbox" name="pet" value="dog" /><label>Dog</label>
+        <input type="checkbox" name="pet" value="cat" /><label>Cat</label>
+        <input type="checkbox" name="pet" value="chicken" /><label
+          >Chicken</label
+        >
+        <input type="checkbox" name="pet" value="lizard" /><label>Lizard</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Radio Fields</legend>
+        <p>
+          Radio fields allow the user to select only one option at a time.All
+          grouped radio inputs share the
+          <em>same name but different values.</em>
+        </p>
+        <p>Which pet is your favorite?</p>
+        <input type="radio" name="favorite_pet" value="dog" /><label>Dog</label>
+        <input type="radio" name="favorite_pet" value="cat" /><label>Cat</label>
+        <input type="radio" name="favorite_pet" value="chicken" /><label
+          >Chicken</label
+        >
+        <input type="radio" name="favorite_pet" value="lizard" /><label
+          >Lizard</label
+        >
+      </fieldset>
+
+      <fieldset>
+        <legend>Select Option Dropdowns</legend>
+        <label for="state">Pick a State</label>
+        <select name="state">
+          <option value="NY">New York</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NM">New Mexico</option>
+        </select>
+      </fieldset>
+      <input type="button" value="Submit" name="submit_profile_d" disabled />
+      <button
+        title="This is a disabled submit button using the button tag"
+        name="submit_profile"
+      >
+        Create Profile
+      </button>
     </form>
   </body>
 </html>
