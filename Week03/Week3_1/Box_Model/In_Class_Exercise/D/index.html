@@ -5,7 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Simple Navbar</title>
 
-    <style type="text/CSS"></style>
+    <style type="text/CSS">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      /* descendant selector */
+      nav#main-menu ul {
+        /* remove bullet points */
+        list-style-type: none;
+        overflow: hidden;
+        background-color: cornflowerblue;
+        /* when we are about to use inline-block, we make the parent element's font size 0 */
+        font-size: 0;
+      }
+
+      nav ul li {
+        display: inline-block;
+        /* bring back a font size since we zeroed out the parent */
+        font-size: 1rem;
+      }
+
+      nav a {
+        display: block;
+        width: 100px;
+        padding: 20px;
+        text-align: center;
+        /* remove default a style */
+        text-decoration: none;
+        color: chartreuse;
+      }
+
+      nav a:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: white;
+      }
+
+      nav a.active {
+        background-color: dodgerblue;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav id="main-menu">
+        <ul>
+          <li><a href="#" class="active">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
 </html>

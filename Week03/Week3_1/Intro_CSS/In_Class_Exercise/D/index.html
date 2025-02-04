@@ -4,7 +4,84 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Intro to CSS Text and Spans</title>
-    <style type="text/CSS"></style>
+    <!-- internal style sheet -->
+    <style type="text/CSS">
+      /* Universal Selector,
+      this is great for general resets or defaults you will override later on */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* tag/element/type selector applies to every instance of that tag unless overwritten further down */
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      h1 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        /* we can call out box properties each side at a time */
+        margin-top: 24px;
+        /* 2 values =  top/bottom & left/right */
+        margin: 2rem 1rem;
+        /* 4 values = top > right > bottom > left
+        think of a clock face and clockwise
+         */
+        margin: 1rem 2rem 3rem 4rem;
+        /* Border shorthand: width style color  */
+        border: 2px solid red;
+        border-width: 1px 2px 3px 4px;
+        border-radius: 5px;
+        /* padding = space between the border aka edge of the box and the content */
+        padding: 1rem;
+      }
+
+      p {
+        font-size: 19px;
+        margin: 1.5rem 0;
+        line-height: 30px;
+      }
+
+      /* class selectors start with . in our css
+      and need to be applied with the class attribute in our HTML */
+      .crazyText {
+        font-family: fantasy;
+        color: rgb(100, 100, 255);
+        text-transform: uppercase;
+        /* x offset, y offset, blur, color */
+        text-shadow: 5px 5px 5px rgb(159, 248, 5);
+      }
+
+      /* ID selectors are for one unique element per HTML file */
+      #callToAction {
+        font-style: italic;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>Nicolas Cage is a Shamanic Thespian!</h1>
+    <p id="callToAction">
+      He makes like 8 movies a year, some are award winning, some are
+      unwatchable and go straight to streaming, and some are that good kind of
+      bad.
+    </p>
+    <p>
+      He actually won an Oscar for Best Actor. He likes to remind us of this.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pretium
+      risus in metus consectetur cursus. Nullam imperdiet hendrerit
+      pellentesque.<span class="crazyText"
+        >Ut pretium tempus turpis vitae pulvinar. Aliquam fermentum massa eget
+        velit iaculis suscipit. Integer interdum feugiat tristique.</span
+      >
+      Phasellus eu nisi ex. Etiam ultrices vel nibh quis malesuada. Nam
+      condimentum efficitur turpis, non condimentum magna tincidunt non.
+      Pellentesque lobortis nisl id nisl rhoncus mollis. Fusce metus massa,
+      dapibus tempor pulvinar a, vestibulum eu diam. Nam luctus urna ex. Integer
+      lobortis sagittis aliquam.
+    </p>
+  </body>
 </html>
