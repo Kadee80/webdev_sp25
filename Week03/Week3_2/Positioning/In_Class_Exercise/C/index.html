@@ -4,6 +4,93 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Positioning</title>
+    <style type="text/css">
+      .abs_br {
+        width: 200px;
+        height: 200px;
+        background-color: blueviolet;
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+      }
+
+      .rel_tl {
+        width: 200px;
+        height: 200px;
+        background-color: orangered;
+        position: relative;
+        top: 400px;
+        left: 50%;
+      }
+
+      .abs_child {
+        width: 100px;
+        height: 100px;
+        background-color: chartreuse;
+        position: absolute;
+        bottom: 0;
+        left: 120px;
+      }
+
+      .rel_parent {
+        width: 400px;
+        height: 400px;
+        background-color: green;
+        position: relative;
+      }
+
+      .abs_parent {
+        width: 600px;
+        height: 600px;
+        background-color: cornflowerblue;
+        position: absolute;
+        top: 200px;
+        right: 200px;
+        z-index: -10;
+      }
+
+      .fixed_top {
+        width: 100%;
+        height: 100px;
+        background-color: yellow;
+        position: fixed;
+        top: 0;
+      }
+
+      .cover {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <!-- When we position an element absolute
+     without declaring a position type for any parent element
+     absolute positioning is based on the browser window
+     -->
+    <div class="abs_br"></div>
+    <!-- When we position an element relative
+     without declaring a position type for any parent element
+     the element is positioned relative to where it was going to be anyway
+    -->
+    <div class="rel_tl"></div>
+
+    <!-- When an absolute positioned child element has a parent element
+     with a defined position (not static) the absolute bounds are in relation to that parent -->
+    <div class="rel_parent">
+      <div class="abs_child"></div>
+    </div>
+
+    <div class="abs_parent">
+      <div class="abs_child"></div>
+    </div>
+
+    <div class="fixed_top"></div>
+
+    <div class="cover"></div>
+  </body>
 </html>
