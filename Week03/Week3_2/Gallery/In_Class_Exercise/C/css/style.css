@@ -1,0 +1,69 @@
+/* How you load a google font or any external font in a css file */
+/* We are essentially importing another stylesheet from elsewhere */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* GLOBAL STYLES */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: black;
+  /* This is how we get a full sized fixed image centered background */
+  background: url('../img/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* apply the default font style at the body tag
+so that all children elements inherit this style
+we can always overwrite when neccessary */
+body {
+  font-family: 'Kaushan Script', serif;
+}
+
+/* To always make sure an image fits inside of its parent div
+apply these style rules */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* GALLERY */
+
+.container {
+  width: 900px;
+  margin: 100px auto;
+  /* when we use inline-block to stack elements
+  we have to zero out the font size on the
+  parent or container element*/
+  font-size: 0;
+}
+
+.polaroid {
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  /* Whenever you want to abs position an element inside
+  of another parent element, the parent element needs to be
+  positioned as well */
+  position: relative;
+}
+
+/* descendant selector */
+.polaroid img {
+  /* border shorthand is width, style, color */
+  border: 10px solid #ccc;
+  border-bottom-width: 45px;
+}
+
+.polaroid p {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 10px;
+  width: 260px;
+  text-align: center;
+  color: #333;
+}
