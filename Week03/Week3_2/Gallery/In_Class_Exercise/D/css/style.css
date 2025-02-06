@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: black;
+  /* This is how we get a full sized
+  fixed centered background image */
+  background: url('../img/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  /* apply the default font family,
+  all descendent elements will inherit this font
+  we can always override for other styles further down*/
+  font-family: 'Kaushan Script', serif;
+}
+
+/* in general it makes more sense to tell images
+to always take up the full width of its container
+and then size the container/frame
+*/
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* GALLERY */
+.container {
+  width: 900px;
+  margin: 100px auto;
+  /* when we use inline block to stack elements
+  we always should zero out the font size on the
+  container element */
+  font-size: 0;
+}
+
+.polaroid {
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  /* Whenever you want to absolutley position something
+  inside another element, you should make sure the parent
+  element is positioned relative */
+  position: relative;
+}
+
+/* descendant selectors */
+.polaroid img {
+  /* border shorthand is width, style, color */
+  border: 10px solid #ccc;
+  border-bottom-width: 45px;
+}
+
+.polaroid p {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 10px;
+  width: 260px;
+  text-align: center;
+  color: #333;
+}
