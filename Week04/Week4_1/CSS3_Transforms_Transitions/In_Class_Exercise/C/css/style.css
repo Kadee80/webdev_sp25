@@ -31,6 +31,65 @@ img {
   height: auto;
 }
 
+/* NAVIGATION */
+
+header {
+  width: 100%;
+  padding: 0 10%;
+  height: 50px;
+  overflow-y: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 10px;
+  z-index: 10;
+  background-color: grey;
+
+  /* flex container properties */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background: url('../img/gravel.webp');
+}
+
+header h1 {
+  color: #333;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  text-align: center;
+  background-color: rgba(40, 40, 40, 0.2);
+}
+
+nav li {
+  font-size: 18px;
+  height: 50px;
+  width: 120px;
+  line-height: 50px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  /* you always set the transition on the default state */
+  transition: all 1s;
+}
+
+nav a:hover {
+  background-color: rgba(40, 40, 40, 0.2);
+  color: white;
+}
+
+nav a.active {
+  background-color: black;
+  color: white;
+}
+
 /* GALLERY */
 
 .container {
@@ -66,4 +125,85 @@ img {
   width: 260px;
   text-align: center;
   color: #333;
+}
+
+/* TRANFORMS */
+
+.scaleUp {
+  transform: scale(1.2);
+  z-index: 100;
+}
+
+.scaleX {
+  transform: scale(2, 1);
+  z-index: 101;
+}
+
+.scaleY {
+  transform: scaleY(2);
+}
+
+.skewX {
+  transform: skewX(20deg);
+  /* transform-origin: top; */
+}
+
+.skewY {
+  transform: skewY(20deg);
+}
+
+.skewBoth {
+  transform: skew(10deg, 30deg);
+}
+
+.rotX {
+  transform: rotateX(180deg);
+}
+
+.rotY {
+  transform: rotateY(180deg);
+}
+
+.rotZ {
+  transform: rotateZ(180deg);
+}
+
+.rotLeft {
+  transform: rotate(-20deg);
+  transform-origin: bottom left;
+  transition: all 5s ease-in-out;
+}
+
+.rotLeft:hover {
+  transform: rotate(20deg);
+  cursor: pointer;
+}
+
+.skewHover {
+  transform: skewX(30deg);
+  transition: all 5s ease;
+}
+
+.skewHover:hover {
+  transform: skewX(-30deg);
+}
+
+.scaleHover {
+  transform: scale(0.5);
+  transition: all 5s ease-in;
+}
+
+.scaleHover:hover {
+  filter: blur(19px);
+  transform: scale(1.5);
+}
+
+.colorSwap {
+  filter: grayscale(100%);
+  transition: all 1s linear;
+}
+
+.colorSwap:hover {
+  filter: grayscale(0);
+  cursor: pointer;
 }

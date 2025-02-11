@@ -31,8 +31,62 @@ img {
   height: auto;
 }
 
-/* GALLERY */
+/* NAVIGATION */
+header {
+  width: 100%;
+  height: 50px;
+  padding: 0 10%;
+  overflow-y: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: grey;
+  /* flex container properties */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: url('../img/white-waves.webp');
+}
 
+header h1 {
+  color: #333;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  text-align: center;
+  background-color: rgba(40, 40, 40, 0.1);
+}
+
+nav li {
+  font-size: 18px;
+  width: 120px;
+  height: 50px;
+  line-height: 50px;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  /* we always define transitions on the base/default state */
+  transition: all 1s linear;
+}
+
+nav a:hover {
+  background-color: rgba(40, 40, 40, 0.3);
+  color: white;
+}
+
+nav a.active {
+  background-color: black;
+  color: white;
+}
+
+/* GALLERY */
 .container {
   width: 900px;
   margin: 100px auto;
@@ -66,4 +120,84 @@ img {
   width: 260px;
   text-align: center;
   color: #333;
+}
+
+/* TRANSFORMS AND TRANSITIONS */
+
+.scaleUp {
+  transform: scale(1.2);
+  /* z-index: 10; */
+}
+
+.scaleX {
+  transform: scale(2, 1);
+}
+
+.scaleY {
+  transform: scaleY(2);
+}
+
+.skewX {
+  transform: skewX(-20deg);
+  transform-origin: top;
+}
+
+.skewY {
+  transform: skewY(-20deg);
+}
+
+.skewBoth {
+  transform: skew(10deg, 40deg);
+}
+
+.rotX {
+  transform: rotateX(180deg);
+}
+
+.rotY {
+  transform: rotateY(180deg);
+}
+
+.rotZ {
+  transform: rotateZ(180deg);
+}
+
+.rotateLeft {
+  transform: rotate(-20deg);
+  transform-origin: bottom right;
+  transition: all 5s ease-out;
+}
+
+.rotateLeft:hover {
+  transform: rotate(20deg);
+}
+
+.skewHover {
+  transform: skewX(30deg);
+  transition: all 5s ease-out;
+}
+
+.skewHover:hover {
+  transform: skewX(-30deg);
+  filter: invert();
+}
+
+.scaleHover {
+  transform: scale(0.5);
+  transition: all 3s ease-in;
+}
+
+.scaleHover:hover {
+  transform: scale(1.2);
+  filter: blur(10px);
+}
+
+/* Filters */
+.colorSwap {
+  filter: grayscale(100%);
+  transition: all 5s linear;
+}
+
+.colorSwap:hover {
+  filter: grayscale(0%);
 }
