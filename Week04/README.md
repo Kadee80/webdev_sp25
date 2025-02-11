@@ -1,4 +1,4 @@
-# HW - Due Tuesday, Week 5
+# HW - Due Thursday, Week 5
 
 Time to start thinking about your midterm project! You will be presenting next week a proposal along with your layout in class next THURSDAY.
 
