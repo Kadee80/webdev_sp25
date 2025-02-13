@@ -97,3 +97,108 @@ img {
   for our class item so it can stretch */
   height: auto;
 }
+
+/*  Responsive Breakpoint */
+/* if the screen is less than or equal to 768px, apply these styles */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    /* get all flex-items within container to stretch and fill */
+    align-items: stretch;
+  }
+  /* we need to override the fixed width of 300px so that it can stretch in column mode */
+  .item {
+    height: 300px;
+    width: auto;
+    margin: 2rem 1rem;
+  }
+}
+
+/* classic layout example */
+header {
+  width: 100%;
+  min-height: 100px;
+  background-color: aqua;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: darkcyan;
+}
+
+.grid-item {
+  width: 23%;
+  margin: 1%;
+}
+
+.secondary-nav {
+  min-width: 25%;
+  background-color: aquamarine;
+}
+
+.menu {
+  /* remove the list defaults */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid grey;
+}
+
+.menu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.menu a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: coral;
+  min-height: 100px;
+}
+
+footer h2 {
+  margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .grid-item {
+    width: 48%;
+  }
+}
+
+/* Phone Size */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .secondary-nav {
+    order: 1;
+  }
+  .grid-container {
+    order: 2;
+    flex-direction: column;
+  }
+  .grid-item {
+    width: 95%;
+  }
+}
