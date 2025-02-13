@@ -1,0 +1,99 @@
+/* GLOBAL STYLES */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* FLEXBOX SIMPLE ROW LAYOUTS */
+
+/* BASE STYLES */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* some styles so we can see all of our containers */
+  min-height: 400px;
+  border: 1px solid purple;
+  background-color: rgba(255, 0, 255, 0.3);
+}
+
+.item {
+  border: 1px solid purple;
+  background-color: rgba(0, 0, 255, 0.3);
+  width: 23%;
+  height: 300px;
+}
+
+/* ATOMIC STYLES - SMALL AS POSSIBLE, MAXIUM REUSABLITY */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-even {
+  justify-content: space-evenly;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+/* flex-item style atoms */
+.self-start {
+  align-self: flex-start;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+.self-stretch {
+  align-self: stretch;
+  /* need to override our set hight of 300px
+  for our class item so it can stretch */
+  height: auto;
+}
