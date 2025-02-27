@@ -4,6 +4,128 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CSS Only Modal</title>
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+      }
+
+      /* anchor tags that look like buttons */
+      a.button {
+        text-decoration: none;
+        color: white;
+        background-color: blueviolet;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        display: inline-block;
+      }
+
+      /* modal styles */
+      .info_modal {
+        /* stretch the div to cover the entire screen */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* transparent gray background */
+        background-color: rgba(0, 0, 0, 0.3);
+        /* make super sure that this overlay and its children showup IN FRONT OF everything else on the page */
+        z-index: 9999999;
+        /* starting state of 0% opacity */
+        opacity: 0;
+        /* we always apply/define the transition on the starting state*/
+        transition: opacity 400ms ease-in;
+        /* make sure our invisible modal contents are not clickable */
+        pointer-events: none;
+      }
+
+      .info_modal:target {
+        opacity: 1;
+        /* re-allow pointer events */
+        pointer-events: auto;
+      }
+
+      .info_modal > div {
+        width: 600px;
+        height: 600px;
+        background-color: whitesmoke;
+        position: relative;
+        margin: 10% auto;
+        padding: 2rem;
+        border-radius: 10px;
+      }
+
+      .close {
+        height: 20px;
+        width: 20px;
+        background-color: whitesmoke;
+        color: black;
+        /* position in top right corner */
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-decoration: none;
+        transition: all 1s ease;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .close:hover {
+        background-color: black;
+        color: white;
+      }
+
+      /* atomic style */
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <!-- anchor tag targets another element on the page with a specific ID -->
+    <!-- Making the links look like buttons with the class .button -->
+    <a href="#info" class="button">Link to Modal 1</a>
+    <a href="#info2" class="button">Link to Modal 2</a>
+
+    <!-- parent/wrapper div which recieve the ID that needs to be targeted -->
+    <!-- THis div will also be our tranparent overlay BG -->
+    <div id="info" class="info_modal center">
+      <!-- this child div is hte modal window itself -->
+      <div>
+        <!-- close button/link absolutely positioned top right -->
+        <a href="#close" class="close">X</a>
+        <!-- You put whatever you want inside of your modal window -->
+        <h2>Title of Modal 1</h2>
+        <p>Hey! Look at me! I'm modal 1.</p>
+      </div>
+    </div>
+
+    <!-- parent/wrapper div which recieve the ID that needs to be targeted -->
+    <!-- THis div will also be our tranparent overlay BG -->
+    <div id="info2" class="info_modal center">
+      <!-- this child div is hte modal window itself -->
+      <div>
+        <!-- close button/link absolutely positioned top right -->
+        <a href="#close" class="close">X</a>
+        <!-- You put whatever you want inside of your modal window -->
+        <iframe
+          width="400"
+          height="250"
+          src="https://www.youtube.com/embed/S-nDX0BeFoQ?si=ck8ZG-A8jTGcCFKy&amp;controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </body>
 </html>
