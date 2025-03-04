@@ -5,6 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Responsive Layout W/ Nav Toggle</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <script type="text/javascript">
+      // wait for the entire DOM Content to load
+      // add event listener for CLICK events on our hamburger menu
+      // write a function to toggle the .show class on our nav tag
+      document.addEventListener('DOMContentLoaded', function () {
+        // this is where i can store HTML elements as variables
+        // this is where i can add other event listeners
+        const hamburger = document.getElementById('hamburger')
+        hamburger.addEventListener('click', toggleMenu)
+      })
+
+      function toggleMenu() {
+        const navbar = document.getElementById('main-nav')
+        navbar.classList.toggle('show')
+      }
+    </script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1 class="brand"><a href="#">Logo</a></h1>
+      <!-- HTML entity starts with & and end with ;
+       they contain character codes for special characters
+      -->
+      <!-- This hamburger menu icon will hide on desktop, show on mobile,
+        be absolutely positioned, clickable via JS to hide/show main-nav -->
+      <span class="mobile-menu" id="hamburger">&#8801;</span>
+      <nav id="main-nav">
+        <ul class="menu">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+          <li><a href="#">Link 5</a></li>
+          <li><a href="#">Link 6</a></li>
+          <li><a href="#">Link 7</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="thumb">
+        <img src="./img/chicken.avif" alt="Silky chickens have 6 toes." />
+      </div>
+
+      <div class="thumb">
+        <img src="./img/chicken.avif" alt="Silky chickens have 6 toes." />
+      </div>
+
+      <div class="thumb">
+        <img src="./img/chicken.avif" alt="Silky chickens have 6 toes." />
+      </div>
+
+      <div class="thumb">
+        <img src="./img/chicken.avif" alt="Silky chickens have 6 toes." />
+      </div>
+
+      <div class="thumb">
+        <img src="./img/chicken.avif" alt="Silky chickens have 6 toes." />
+      </div>
+
+      <div class="thumb">
+        <img src="./img/chicken.avif" alt="Silky chickens have 6 toes." />
+      </div>
+
+      <div class="thumb">
+        <img src="./img/chicken.avif" alt="Silky chickens have 6 toes." />
+      </div>
+
+      <div class="thumb">
+        <img src="./img/chicken.avif" alt="Silky chickens have 6 toes." />
+      </div>
+    </main>
+  </body>
 </html>
