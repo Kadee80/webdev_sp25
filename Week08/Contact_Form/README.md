@@ -6,4 +6,3 @@ Today we are going to make and style a contact form. We will then sprinkle in so
 - Add some quick style variations with [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 - Wire up the form action to [FormSpree](https://formspree.io/). You will have to sign up for an account and configure a form. Once we do this, keep that tab open!
 - Copy our code over to a new repo and deploy using [Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
-  T
