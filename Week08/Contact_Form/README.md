@@ -1,4 +1,4 @@
-# Contact Form with Bootstrap, CSS variables, and Hosting on Github.io
+# Contact Form withCSS variables, and Hosting on Github.io
 
 Today we are going to make and style a contact form. We will then sprinkle in some CSS variables to change the "theme" easily, and wire it up with FormSpree. There are a lot of free contact form submission services, I just chose this one because it was quick and FREE.
 
