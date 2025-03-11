@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Me</title>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap');
+
+      /* CSS Variables Default */
+      :root {
+        --c-bg: #e2e8f0;
+        --c-text: #475569;
+        --c-bg-btn: #1e293b;
+        --c-btn-hover: #64748b;
+        --c-btn-text: #f8fafc;
+        --ff-heading: 'Press Start 2P', system-ui;
+        --ff-body: 'Share Tech Mono', monospace;
+      }
+
+      /* Apply different IDs for Different Color Themes */
+      #green {
+        --c-bg: #a7f3d0;
+        --c-text: #065f46;
+        --c-bg-btn: #059669;
+        --c-btn-hover: #065f46;
+        --c-btn-text: #ecfdf5;
+      }
+
+      #blue {
+        --c-bg: #1e3a8a;
+        --c-text: #dbeafe;
+        --c-bg-btn: #3b82f6;
+        --c-btn-hover: #1d4ed8;
+        --c-btn-text: #eff6ff;
+      }
+
+      /* Base Styles */
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      .container {
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        color: var(--c-text);
+        background-color: var(--c-bg);
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .label-lg {
+        font-size: 2rem;
+      }
+
+      .input-lg {
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        /* add CSS VAR for color here */
+        border: 1px solid gray;
+        margin-right: 2rem;
+      }
+
+      .message-area {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        font-size: 2rem;
+      }
+
+      .message {
+        height: 16rem;
+        border-radius: 0.25rem;
+        padding: 1rem;
+      }
+
+      .button-bar {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 2rem;
+      }
+
+      .btn-dark {
+        width: 100%;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        background-color: var(--c-bg-btn);
+        color: var(--c-btn-text);
+        border: 1px solid var(--c-btn-text);
+      }
+
+      .btn-dark:hover {
+        background-color: var(--c-btn-hover);
+      }
+
+      /* Font variants by changing the ID on the Body tag */
+      #tech h1 {
+        font-family: var(--ff-heading);
+      }
+
+      body#tech {
+        font-family: var(--ff-body);
+      }
+    </style>
+  </head>
+  <body id="tech">
+    <div class="container">
+      <h1>Get in Touch!</h1>
+      <form action="https://formspree.io/f/maneyder" method="POST">
+        <div class="row">
+          <label for="name" class="label-lg">Name:</label>
+          <input type="text" name="name" class="input-lg" required />
+
+          <label for="email" class="label-lg">Email:</label>
+          <input type="email" name="email" class="input-lg" required />
+        </div>
+
+        <div class="message-area">
+          <label for="message">Leave us a message:</label>
+          <textarea
+            class="message"
+            name="message"
+            placeholder="Leave a comment or question here."
+            required
+          ></textarea>
+        </div>
+        <div class="button-bar">
+          <button class="btn-dark" type="submit">Send</button>
+        </div>
+        <input
+          name="subject"
+          type="hidden"
+          value="New submission from {{name}}"
+        />
+      </form>
+    </div>
+  </body>
+</html>
