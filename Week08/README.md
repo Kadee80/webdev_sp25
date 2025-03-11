@@ -1,4 +1,4 @@
-# HW Week07: Due Tuesday Week09
+# HW Week08: Due Tuesday Week09
 
 Complete your midterm projects. You will be presenting either Tuesday or Thursday. All students must be prepared to present by Tuesday, presentation order will be randomly generated at the start of class Tuesday. ALL students are expected to be present for both presentation days. If you present and Tuesday and decide to be absent Thursday, it will negatively affect your midterm grade!
 
