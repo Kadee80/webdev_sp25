@@ -4,7 +4,116 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JS Data Types</title>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // declare a variable
+      var myVar
+      // assign a value to that variable
+      myVar = '20'
+      // declare and assign all in one statement
+      var myVar2 = 15
+
+      //console.log(myVar)
+      //console.log(typeof myVar)
+
+      // javascript will let you do weird things with numbers in strings...watch out!
+      //console.log(myVar + myVar2) // incorrect! '20' + '15' = '2015'
+      // even weirder, look what happens if we mulitply
+      //console.log(myVar * myVar2) // wow this is correct! 20*15= 300
+      // console.log(5 * 'fourty 4') // now javascript is compaining NAN = not a number
+      var message = 'hello '
+      var recipient = 'world'
+      // string concatination
+      //console.log(message + recipient)
+
+      // sometimes we want to insert a variable inside a longer message to the user
+      var temp = 55
+      //console.log("Today's temperature in brooklyn is " + temp + ' degrees F.')
+
+      // booleans -using the const keyword, when we use const we have to immediately assign a value
+      const isOn = false
+      // let lis used when a value is going to change based on other conditions, OR if we want
+      // to declare but not assign a value to a variable
+      let conditionalMessage
+
+      // conditional statement
+      if (isOn) {
+        conditionalMessage = 'The lights are ON!'
+      } else {
+        conditionalMessage = 'The lights are OFF!'
+      }
+
+      // alert(conditionalMessage)
+
+      const myNum = 80
+      // template literals,
+      // notice by hitting return, we also get a carriage return in our logged message
+      const anotherMessage = `My favorite
+number is
+${myNum}.`
+      //console.log(anotherMessage)
+
+      // declare and define a function
+      function printMessage() {
+        console.log('hello world!')
+      }
+      // call/execute the function
+      printMessage()
+
+      /*
+      // exact same function but written as an arrow function
+      const printMessage = () => {
+        console.log('hello world!')
+      }
+
+      printMessage()
+      */
+
+      // a much more useful function using arguments
+      function sumValues(a, b) {
+        return a + b
+      }
+
+      const newNumber = sumValues(398, 44567)
+      console.log(newNumber)
+
+      // booleans and conditionals within a function
+      let isOff = true
+
+      /*
+      isOff = true assigns the value true to isOff
+      ifOff == 'true' checks the value of isOff but doent care if the type matches
+      isOff === true check that the value and the type match (DEEP EQUALS)
+      */
+
+      function switchOnOff() {
+        if (isOff === true) {
+          alert(`isOff is currently ${isOff}. Switching to false now.`)
+          isOff = false
+        } else if (isOff === false) {
+          alert(`isOff is currently ${isOff}. Switching to true now.`)
+          isOff = true
+        }
+      }
+
+      switchOnOff()
+      switchOnOff()
+
+      // loops and increments
+      /*
+       i++ is shorthand for i = i+1
+       i-- is shorthand for i = i-1
+       i+=5 is shorthand for i = i+5
+      */
+
+      function countToN(n) {
+        // for loop, beware of infinite loops
+        for (var i = 1; i <= n; i++) {
+          console.log(i)
+        }
+      }
+
+      countToN(17)
+    </script>
   </head>
   <body></body>
 </html>
