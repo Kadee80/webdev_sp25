@@ -6,12 +6,26 @@ Presentation orders will be generated using a HTML and Javascript at the beginni
 
 ## Section C
 
-### Tuesday
+1. Daniela
+2. Faiza
+3. Tai
+4. Celine
+5. Shad
+6. Semehal
+7. Benjamin
+8. Jerry
+9. Marc
 
-### Thursday
+---
+
+10. Eric
+11. Abril
+12. Matthew
+13. Faven
+14. Jackson
+15. Ella
+16. Anya
+17. Harry
+18. Abdul
 
 ## Section D
-
-### Tuesday
-
-### Thursday
