@@ -29,3 +29,25 @@ Presentation orders will be generated using a HTML and Javascript at the beginni
 18. Abdul
 
 ## Section D
+
+1. Samantha
+2. Kayln
+3. Lydia
+4. Allyson
+5. Zeus
+6. Grace
+7. Chloe
+8. Zhenwei
+9. Ting
+
+---
+
+10. Laila
+11. Yara
+12. Ethan
+13. Ben
+14. Cynthia
+15. Blaise
+16. Diana
+17. Luis
+18. Ridwan
