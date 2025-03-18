@@ -13,13 +13,13 @@ Presentation orders will be generated using a HTML and Javascript at the beginni
 5. Shad
 6. Semehal
 7. Benjamin
-8. Jerry
+8. Eric
 9. Marc
+10. Abril
 
 ---
 
-10. Eric
-11. Abril
+11. Jerry
 12. Matthew
 13. Faven
 14. Jackson
