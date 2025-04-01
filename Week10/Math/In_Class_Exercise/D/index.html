@@ -4,7 +4,86 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JS Math Methods</title>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // Integers aka Whole Numbers
+      const x = 15
+      const y = 25
+      // Floating point numbers
+      const z = 10.5
+
+      // addition
+      console.log(x + y)
+      // subtractions
+      console.log(x - y)
+      // multiplication
+      console.log(x * y)
+      // divison
+      console.log(x / y)
+
+      // modular operator returns the divison remainder
+      // this is really helpful when we want to use odd/even or every nth number for something
+      console.log(10 % 3)
+
+      // just like in algebra, order of operations matters!
+      console.log((x + y) * (y - 1))
+
+      // increments
+      // x ++
+      // x +=5
+      // decrements
+      // x --
+      // x-=5
+
+      // floating point numbers and basic math functions
+      // Math.floor always rounds DOWN
+      // Math.ceil always rounds UP
+      const k = 2.25
+      const kDown = Math.floor(k)
+
+      const kUp = Math.ceil(k)
+      console.log(k, kDown, kUp)
+
+      // Math.round() does what normal rounding rules do
+      console.log(Math.round(2.25))
+      console.log(Math.round(2.75))
+
+      // Math.random() returns a random floating point number between 0 and 1
+      console.log(Math.random())
+
+      // If we use Math.round with Math.random() we can get a true false random results
+      const yn = Math.round(Math.random())
+      if (yn === 0) {
+        console.log('heads')
+      } else {
+        console.log('tails')
+      }
+
+      // Returns a random number between 0 and X
+      function randNum(n) {
+        // when we declare a variable inside of a function, loop or any other {}
+        // that variable lives and dies inside the {}
+        // the variable is scoped
+        const rn = Math.round(n * Math.random())
+        // returning values from functions allows them to be stored/used elsewhere in your code
+        return rn
+      }
+
+      const myRandomNumber = randNum(99)
+      console.log(myRandomNumber)
+
+      // What about random number within a range?
+      function randNumRange(min, max) {
+        const rn = Math.round(Math.random() * (max - min) + min)
+        return rn
+      }
+
+      console.log(randNumRange(123, 567))
+
+      console.log(
+        `On the fly, no var storage,
+our random number is ${randNumRange(33, 55)}`
+      )
+    </script>
   </head>
   <body></body>
 </html>

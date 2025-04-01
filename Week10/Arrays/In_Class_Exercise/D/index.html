@@ -4,7 +4,63 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Arrays</title>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // declare a new variable called months as assign it a list of strings in an array
+      const months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ]
+
+      console.log(months.length)
+
+      // remove the LAST slot/item/month in our array using .pop()
+      // pop returns the removed value, so that we can store it elsewhere
+      const lastMonth = months.pop()
+      console.log(months)
+
+      console.log(
+        `We just removed the month of ${lastMonth}. And our new array length is ${months.length}.`
+      )
+
+      // if we want to add our last month back in, OR any other new values to the END of our array
+      months.push(lastMonth)
+      months.push('Vacationember')
+      console.log(months)
+
+      months.pop()
+
+      // use a loop / recursion to list out every month in our array
+      for (var i = 0; i < months.length; i++) {
+        console.log(`The month of ${months[i]} is in slot ${i}.`)
+      }
+
+      // loop through our months array backwards and delete the last item using pop
+      // while also adding the removed item into a new array full of backwards months
+      let backMonths = []
+      for (var i = months.length; i > 0; i--) {
+        const delMonth = months.pop()
+        backMonths.push(delMonth)
+        console.log(
+          `Just deleted ${delMonth}. Our months array length is now ${months.length}.`
+        )
+      }
+      console.log(months.length) // should be 0 by the end of the loop
+      console.log(backMonths) // should have all months but backwards
+
+      const ri = Math.floor(Math.random() * backMonths.length)
+      // access a random item in our array
+      console.log(backMonths[ri])
+    </script>
   </head>
   <body></body>
 </html>

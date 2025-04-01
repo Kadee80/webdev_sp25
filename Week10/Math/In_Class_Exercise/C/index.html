@@ -4,7 +4,99 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JS Math Methods</title>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // Integers / Whole Numbers
+      const x = 15
+      const y = 35
+      // float
+      let z
+      z = 10.5
+
+      //addition
+      console.log(x + y)
+      //subtraction
+      console.log(x - y)
+      //multiplication
+      console.log(x * y)
+      //division
+      console.log(x / y)
+
+      // modular operator % returns the division remainder
+      // this is really helpul with when you want to use odd/even every nth of something
+      console.log(10 % 3)
+
+      // just like in algebra, order of operations matters
+      console.log((x + y) * (y - 1))
+
+      // increments
+      //x++
+      /// decrement
+      //x--
+
+      // increment or decrement by a certain number
+      //x += 2
+      //y -= 5
+
+      // floating point numbers and some basic math functions
+      // Math.floor will always round DOWN
+      const k = 2.25
+      const kDown = Math.floor(k)
+      console.log(kDown)
+      // MAth.ceil will always round UP
+      console.log(Math.ceil(k))
+
+      const num1 = 2.2
+      const num2 = 2.7
+      // Math.round rounds the way youd expect
+      console.log(Math.round(num1))
+      console.log(Math.round(num2))
+
+      // Math.random() returns a floating point number between 0 and 1
+      console.log(Math.random())
+
+      // we can use Math.random() and Math.round() to generate a random boolean
+      let yn = Math.round(Math.random())
+
+      if (yn === 0) {
+        console.log(false)
+      } else {
+        console.log(true)
+      }
+
+      // Random number between 0 and n
+      // For this we will need to make a function that takes a parameter
+      function randomNum(n) {
+        // when we declare variables inside a function, that variable
+        // is not accessible outside of that fuction
+        const rn = Math.round(n * Math.random())
+        return rn
+      }
+
+      const myRandomNumber = randomNum(345)
+      const myRandomNumber2 = randomNum(25)
+      console.log(myRandomNumber, myRandomNumber2)
+      // random numbers between 0 and x are really useful for picking a random slot in an array
+
+      function randNumRange(min, max) {
+        const rn = Math.round(Math.random() * (max - min) + min)
+        // return it for use/assignment elsewhere in our code
+        return rn
+      }
+
+      const rn1 = randNumRange(20, 30)
+      const rn2 = randNumRange(55, 77)
+      // string concatination
+      console.log(
+        'On the fly , no var: ' +
+          randNumRange(33, 44) +
+          ' ... keep going with message'
+      )
+      const message = `Random number one is ${rn1}.
+Random number 2 is ${rn2}. Template literals are great!
+...but don't forget to use backticks!`
+
+      console.log(message)
+    </script>
   </head>
   <body></body>
 </html>

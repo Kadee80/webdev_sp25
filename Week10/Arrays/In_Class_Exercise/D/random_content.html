@@ -4,7 +4,51 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Random Content: Math + Arrays</title>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // make an array of img sources containing goats off the internet
+      const arrImg = [
+        'https://esa.org/wp-content/uploads/2017/05/170524-DELIBES-tree-climbing-seed-spitting-goats-fee1488-fig-0001-1024x682.png',
+        'https://www.travelawaits.com/wp-content/uploads/2021/04/e42a03187099bd58a4db67edbac89e42a03.jpg?zoom=2&resize=800%2C800',
+        'https://img.atlasobscura.com/Dx_cGP2rsWf8TtvOP6Z5rIFPsvNVonVXd9zX7tW4Q3k/rt:fit/h:400/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL3BsYWNl/X2ltYWdlcy9vbG50/ejlldG1xb2Y0MjZi/MzAxYmRkNTY3ZWE0/ZV8yNzMxODExMl9V/bmtub3duLmpwZw.webp',
+      ]
+      // make an array of links to the pages that contain that image
+      const arrLinks = [
+        'https://esa.org/blog/2017/05/24/goats-climb-argan-trees-spit-seeds/',
+        'https://www.travelawaits.com/2478416/tree-climbing-goats-in-morocco/',
+        'https://www.atlasobscura.com/places/the-tree-goats-of-morocco-tamri-morocco',
+      ]
+
+      // helper function for picking a random number in our array
+      function randomIndex(max) {
+        return Math.floor(Math.random() * max)
+      }
+
+      // write our own random image/link function outside of event listeners
+      // but remember we should not call it untill the DOM is fully loaded
+      function loadRandomImage() {
+        // random index within the range of our array length
+        const index = randomIndex(arrImg.length)
+        // image and link elements stores as js vars
+        const img = document.getElementById('animal')
+        const link = document.getElementById('dynLink')
+
+        img.src = arrImg[index]
+        link.href = arrLinks[index]
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // get elements by ID and store them in global variables
+        // assign any other event listeners to element on the page
+        // call all functions we want to fire when the page loads
+        loadRandomImage()
+      })
+
+      // document.addEventListener('DOMContentLoaded',loadRandomImage)
+    </script>
   </head>
-  <body></body>
+  <body>
+    <a href="#" target="_blank" id="dynLink">
+      <img src="" id="animal" alt="A random photo of a goat"
+    /></a>
+  </body>
 </html>
