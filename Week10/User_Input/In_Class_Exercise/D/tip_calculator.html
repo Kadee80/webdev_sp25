@@ -4,8 +4,143 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tip Calculator</title>
-    <style type="text/css"></style>
-    <script type="text/javascript"></script>
+    <style type="text/css">
+      .container {
+        width: 300px;
+        margin: 0 auto;
+        /* a little trick from before flexbox align items existed */
+        line-height: 40px;
+        margin-top: 5%;
+        border: 1px solid gray;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .well {
+        border-radius: 10px;
+        background-color: #ddd;
+        min-height: 100px;
+        padding: 20px;
+      }
+
+      .container button {
+        width: 100%;
+        padding: 10px 0;
+        border: 2px solid gray;
+        cursor: pointer;
+        margin: 10px 0;
+        color: white;
+        background-color: #333;
+        transition: background-color 1s ease;
+      }
+
+      .container button:hover {
+        background-color: #777;
+      }
+
+      input[type='number'] {
+        width: 100%;
+        padding: 10px 0;
+        border: 1px solid gray;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 24px;
+      }
+    </style>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        // add an event listender to our button
+        // we dont need to store it as a variable, we can just add the event listener and mvoe on
+        document.getElementById('calcBtn').addEventListener('click', calcTip)
+      })
+
+      function calcTip(event) {
+        // stopped the page from reloading and an attempted get request
+        event.preventDefault()
+        // console.log(event)
+        // grab our output div and store it as a variable so we can add HTML elements to it at the end
+        const result = document.getElementById('tipResult')
+        // clear out any child elements from our well div
+        result.innerHTML = ''
+
+        // grab the bill value from the user input
+        let bill = document.getElementById('bill').value
+        // remeber input values always come in here as strings, we need to parse
+        bill = parseFloat(bill)
+
+        // first lets declare a few variables for our calculations
+        let per // user seleced tip %
+        let tip // per * bill
+        let total // bill + tip
+
+        // find the selected tip radio button from an array/list of radio buttons
+        const arrTip = document.getElementsByName('tip')
+        //console.log(arrTip)
+        // loop through each element in our NodeList and find which one has the checked attribute
+        for (var i = 0; i < arrTip.length; i++) {
+          if (arrTip[i].checked) {
+            per = parseFloat(arrTip[i].value)
+            // once we find the checked element, we can stop looping
+            break
+          }
+        }
+
+        // calculate our tip and total etc
+        tip = bill * per
+        // console.log(tip)
+        tip = moneyRound(tip)
+        // console.log(tip)
+        total = moneyRound(bill + tip)
+
+        // spit out our bill info using createrElement and createTextNode
+        // 4 empty P tags
+        let p1 = document.createElement('P')
+        let p2 = document.createElement('P')
+        let p3 = document.createElement('P')
+        let p4 = document.createElement('P')
+        // 4 text nodes
+        let t1 = document.createTextNode(`Bill: $${bill}`)
+        let t2 = document.createTextNode(`Tip percentage: ${per}`)
+        let t3 = document.createTextNode(`Calculated tip: $${tip}`)
+        let t4 = document.createTextNode(`Total: $${total}`)
+        // Append the text nnodes to the P tags
+        p1.appendChild(t1)
+        p2.appendChild(t2)
+        p3.appendChild(t3)
+        p4.appendChild(t4)
+        // Append the P tags to the result div
+        result.appendChild(p1)
+        result.appendChild(p2)
+        result.appendChild(p3)
+        result.appendChild(p4)
+      }
+
+      function moneyRound(num) {
+        let rn = Math.ceil(num * 100) / 100
+        return rn
+      }
+    </script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>Tip Calculator</h1>
+      <form>
+        <label for="bill">Enter total value of bill:</label>
+        <br />
+        <input type="number" name="bill" id="bill" min="0" step="0.01" />
+        <br />
+        <!-- radio button group - all radio buttons in the same group/choice share
+         the name name but each has a different value -->
+        <label><input type="radio" name="tip" value="0.05" />5%</label>
+        <label><input type="radio" name="tip" value="0.10" />10%</label>
+        <label><input type="radio" name="tip" value="0.15" />15%</label>
+        <label><input type="radio" name="tip" value="0.20" />20%</label>
+
+        <br />
+        <button type="submit" id="calcBtn">Calculate Tip</button>
+      </form>
+      <!-- Output div to display/print our results -->
+      <div class="well" id="tipResult"></div>
+    </div>
+  </body>
 </html>

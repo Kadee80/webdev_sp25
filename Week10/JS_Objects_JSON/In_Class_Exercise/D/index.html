@@ -4,7 +4,36 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JS Objects and JSON</title>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // initialize a new object and store it a variable named customer
+      const customer = {
+        name: 'Tony',
+        age: 23,
+        married: false,
+        pets: ['dog', 'cat', 'iguana'],
+        siblings: [
+          {name: 'Mary', age: 32, married: true},
+          {name: 'Billy', age: 16, married: false},
+        ],
+      }
+      // log tony's cat
+      console.log(customer.pets[1])
+
+      // we can also add new values or update existing using dot notation
+      // update tony's marrital status
+      customer.married = true
+      console.log(customer)
+
+      // give mary 2 pets, a snail and a snake
+      customer.siblings[0].pets = ['snail', 'snake']
+      console.log(customer.siblings)
+
+      ageVariable = 'age'
+      customer['age'] = 45
+      customer[ageVariable] //  same as tony.age
+
+      // customer['pets'][i]
+    </script>
   </head>
   <body></body>
 </html>

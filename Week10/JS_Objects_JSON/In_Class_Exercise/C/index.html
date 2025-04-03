@@ -4,7 +4,43 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JS Objects and JSON</title>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // initialize a new object and store it as a variable names customer
+      const customer = {
+        name: 'Tony',
+        age: 23,
+        married: false,
+        pets: ['dog', 'cat', 'iguana'],
+        siblings: [
+          {
+            name: 'Mary',
+            age: 32,
+            married: false,
+          },
+          {
+            name: 'Billy',
+            age: 16,
+            married: true,
+          },
+        ],
+      }
+
+      console.log(customer.name)
+      // reassign the value for the name property
+      customer.name = 'Anthony'
+      console.log(customer)
+      // log tony's third pet
+      console.log(customer.pets[2])
+      console.log(customer['pets'][2])
+      customer.pets.push('chicken')
+      console.log(customer.pets)
+
+      // give mary 2 pets: spider and a snail
+      customer.siblings[0].pets = ['spider', 'snail']
+      // how would i log how many pets tony has?
+      console.log(customer.pets.length)
+      console.log(customer)
+    </script>
   </head>
   <body></body>
 </html>

@@ -4,8 +4,92 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>User Input | Switch Statements</title>
-    <style type="text/css"></style>
-    <script type="text/javascript"></script>
+    <style type="text/css">
+      h1 {
+        text-transform: uppercase;
+      }
+
+      .red {
+        color: red;
+      }
+
+      .blue {
+        color: rgba(0, 0, 200, 0.7);
+      }
+
+      .green {
+        color: #00ff00;
+      }
+
+      .purple {
+        color: rgb(200, 0, 255);
+      }
+    </style>
+    <script type="text/javascript">
+      // make a function that changes the color of the H1 based on which number the user picks
+
+      // first thing we always need is an event listener to wait for the page to fully load so we can
+      // add other event listeners
+
+      document.addEventListener('DOMContentLoaded', function () {
+        let myBtn = document.getElementById('changeBtn')
+        // console.log(myBtn.classList)
+        myBtn.addEventListener('click', changeClass)
+      })
+
+      function changeClass() {
+        // grab the user input and store in a variable
+        const userN = document.getElementById('num')
+        console.log(typeof userN.value)
+        // but we dont want a string we want an integer!
+        const n = parseInt(userN.value)
+        console.log(typeof n)
+
+        // grab our h1 so we can change its className in a switch statement
+        const h = document.getElementById('changeMe')
+
+        // rather than having a list of condiutionals lets use a switch statemnt
+        switch (n) {
+          case 0:
+            h.className = 'red'
+            // you can have a lot of code to execute for each case, but at the end you need to
+            break
+          case 1:
+            h.className = 'green'
+            break
+          case 2:
+            h.className = 'blue'
+            break
+          case 3:
+            h.className = 'purple'
+            break
+          default:
+            // the default case is always needed in the event that none of the above are true
+            break
+        }
+      }
+    </script>
   </head>
-  <body></body>
+  <body>
+    <h1 id="changeMe">Get user input to change my style!</h1>
+
+    <form>
+      <fieldset>
+        <legend>Pick a Number between 0 and 3</legend>
+        <!-- input that accepts only whole numbers between 0 and 3 -->
+        <input
+          type="number"
+          name="num"
+          id="num"
+          min="0"
+          max="3"
+          step="1"
+          required
+        />
+        <button type="button" id="changeBtn" class="btnClass sillyClass">
+          Click to change the color class of the h1
+        </button>
+      </fieldset>
+    </form>
+  </body>
 </html>
