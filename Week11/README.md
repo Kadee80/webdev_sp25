@@ -1,4 +1,4 @@
-# HW Week10: Due Tuesday Week11
+# HW Week10: Due Tuesday Week12
 
 Now that we have covered some introductory Javascript principles, it's time for a HW assignment dedicated to vanilla Javascript. Next Tuesday anyone who volunteers to demo their HW assignment will recieve BONUS participation points. This extra credit is a big one. It will either cancel out a class absence (3+ unexcused absences results in the drop of a whole letter grade on your final grade) or as 3% additional credit on your final project.
 
