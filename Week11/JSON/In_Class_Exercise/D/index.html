@@ -10,12 +10,66 @@
         name: 'Tony',
         age: 23,
         married: false,
+        eyeColor: 'green',
         pets: ['dog', 'cat', 'iguana'],
         siblings: [
           {name: 'Mary', age: 32, married: true},
           {name: 'Billy', age: 16, married: false},
         ],
       }
+
+      // we can also add new keys and values at any time
+      // customer.eyeColor = 'green'
+
+      // we can change existing value
+      // customer.siblings[0].age = 45
+
+      // sometimes we need to use brackets instead of dot notation
+      // const keyToAccess = 'age'
+      // to log billys age
+      // customer.siblings[1][keyToAccess]
+
+      // you can loop through arrays in objects
+      // in objects, the order of the keys is not consistent!
+      // if order matters, use an array - arrays have consistent indexes
+
+      // to turn an object into JSON we stringify it - adds string quotes to all of our keys
+      const customerJSON = JSON.stringify(customer)
+      // console.log(customerJSON)
+
+      // to turn JSON into a javascript object we parse it
+      const customerObject = JSON.parse(customerJSON)
+      // console.log(customerObject)
+
+      // our first async function to log api results nicely for a user
+      // any function that needs to await a promise, needs to be flagged as async
+      async function logApiResults() {
+        // fetch returns a PROMISE object, promises take time to resolve
+        // await = IOU, dear JS please chill out and done move on until this promise resolves and we have a prooper value
+        const response = await fetch(
+          'https://rickandmortyapi.com/api/character/5'
+        )
+        // this also needs await flag, since it is dependent on another awaited value
+        // .json() parses a JS object out of JSON as well - this is how MDN gets a result from an API call response
+        const result = await response.json()
+        // console.log(result)
+        return result
+      }
+
+      // declare a global variable for my character data object - so that is can be accessed anywhere else
+      const myApiResult = {}
+      // use a callback function via then() to do other things with our data once it is successfully fetched
+      logApiResults()
+        .then((data) => {
+          // this is where we would create DOM elements and display something to the user
+          myApiResult.data = data
+          const message = `${myApiResult.data.name} is a ${myApiResult.data.species}
+        from ${myApiResult.data.origin.name} and they are ${myApiResult.data.status}.`
+          console.log(message)
+        })
+        .catch((error) => {
+          console.error('ERROR', error)
+        })
     </script>
   </head>
   <body></body>

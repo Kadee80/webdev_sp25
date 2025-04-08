@@ -7,14 +7,13 @@
     <!-- Today we are going to hit 2 different API endpoints and dynamically insert HTML -->
     <!-- Rick and Morty Character Stats, change characer index to select (random) -->
     <!-- https://rickandmortyapi.com/api/character/1 -->
-    <!-- Random Quote API Endpoint -->
-    <!-- https://quote-garden.onrender.com/api/v3/quotes/random -->
+
     <!--
     We will need to look at adding callback functions when our async functions complete
     with .then()  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
     -->
     <!-- We will format our messages using template literals
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals 
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
     -->
     <!-- Write our first arrow function
       https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
@@ -30,6 +29,79 @@
         // return a value from our function
         return rn
       }
+
+      // a function to get our data and format it as an object
+      const fetchCharacterJSON = async () => {
+        const randomIndex = randNumRange(0, 110)
+        const response = await fetch(
+          `https://rickandmortyapi.com/api/character/${randomIndex}`
+        )
+        const result = await response.json()
+        return result
+      }
+
+      // a few functions to render HTML for the user
+      const renderCharacterInfo = (data) => {
+        // grab an element from the page
+        const characterMessage = document.getElementById('message')
+        // console.log('SUCCESS', data)
+
+        // we could extract each value by key and store in variables individually
+        // const name = data.name ...
+
+        // instead we can destructure all at once!
+        const {name, species, origin, status} = data
+
+        // now we can format our message for the user with slightly less typing
+        const message = `${name} is a ${species} from ${origin.name} and they are ${status}.`
+        characterMessage.append(message)
+      }
+
+      const renderCharacterCard = (result) => {
+        // we need an HTML element to append to
+        const parentElement = document.getElementById('card')
+        // use template literals to make some fake HTML
+        const headShot = `<img src=${result.image} />`
+
+        // insertAdjacentHTML(postion, text)
+        parentElement.insertAdjacentHTML('afterbegin', headShot)
+
+        // use append to insert text into our H3
+        document.getElementById('characterName').append(result.name)
+
+        // store our table element as a var
+        const charInfo = document.getElementById('charInfo')
+        //destructure some values
+        const {species, origin, status} = result
+        // write out the HTML in the body tag before pasting it here
+        const stats = `
+        <tr>
+          <th>Species</th>
+          <td>${species}</td>
+        </tr>
+        <tr>
+          <th>Origin</th>
+          <td>${origin.name}</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>${status}</td>
+        </tr>
+        `
+        charInfo.insertAdjacentHTML('beforeend', stats)
+      }
+
+      // chain fetchCharacterJSON to our callback functions using .then()
+      // catch any errors
+
+      fetchCharacterJSON()
+        .then((data) => {
+          renderCharacterInfo(data)
+          renderCharacterCard(data)
+        })
+        .catch((error) => {
+          console.error('ERROR', error)
+        })
     </script>
     <style type="text/css">
       /* Some custom fonts from google */
@@ -53,25 +125,17 @@
         /* from Oribton font documentation */
         font-family: 'Orbitron', sans-serif;
       }
-
-      #inspo {
-        font-family: 'Rock Salt', cursive;
-        width: 50%;
-        margin: 0 auto;
-      }
     </style>
   </head>
   <body>
     <div id="card">
+      <!-- after begin image inserts here -->
       <h3 id="characterName"></h3>
-      <table id="charInfo"></table>
+      <table id="charInfo">
+        <!-- before end insert HTML for table -->
+      </table>
       <!-- Add this for first function -->
       <div id="message"></div>
-    </div>
-
-    <div id="inspo">
-      <p class="fancy"></p>
-      <p class="plain"></p>
     </div>
   </body>
 </html>

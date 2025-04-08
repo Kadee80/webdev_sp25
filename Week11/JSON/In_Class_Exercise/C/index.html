@@ -16,6 +16,62 @@
           {name: 'Billy', age: 16, married: false},
         ],
       }
+
+      // log Tony's 3rd pet
+      // customer.pets[2]
+
+      // reassign values to any key
+      // customer.name = 'Anthony'
+
+      var keyToAccess = 'name'
+      // sometimes with object we need to pass in a variable instead of a key so dot notation wont work
+      // customer.siblings[0][keyToAccess]
+
+      // we can add new fields with values at any time
+      // customer.height = 60
+
+      // convert any JS object into JSON
+      const customerJSON = JSON.stringify(customer)
+      //console.log(customerJSON)
+
+      // convert any JSON data received from a file or an API call
+      const customerObject = JSON.parse(customerJSON)
+      //console.log(customerObject)
+
+      // make our first API call using fetch
+      // whenever we use await flag inside of a function, we have to flag that function
+      // as async
+      async function logApiResults() {
+        // await = dear JS please chill and wait for the Promise on the next
+        // line to resolve before moving on with any other code here
+        // IOU a response, please wait till you get it
+        const response = await fetch(
+          'https://rickandmortyapi.com/api/character/7'
+        )
+        // this is how MDN gets an object out of a API response
+        const result = await response.json()
+        //console.log('RESULT', result)
+        return result
+      }
+
+      // once we have a result we probably want to store it as a var
+      const myApiResult = {}
+
+      // all log api results does is get the data, and return the result after logging
+      // we probably want to chain a bunch of stuff once we get our data,
+      // whenever theres potential to fail, we need a catch
+      logApiResults()
+        .then((data) => {
+          myApiResult.data = data
+          // this is where we would generate HTML for the user
+          const message = `${myApiResult.data.name} is a ${myApiResult.data.species}
+        from ${myApiResult.data.origin.name} and they are a ${myApiResult.data.status}.`
+          console.log(message)
+        })
+        // whenever we have a then, we need a catch for errors
+        .catch((error) => {
+          console.error(error)
+        })
     </script>
   </head>
   <body></body>

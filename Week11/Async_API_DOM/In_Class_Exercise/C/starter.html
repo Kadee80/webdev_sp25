@@ -7,8 +7,7 @@
     <!-- Today we are going to hit 2 different API endpoints and dynamically insert HTML -->
     <!-- Rick and Morty Character Stats, change characer index to select (random) -->
     <!-- https://rickandmortyapi.com/api/character/1 -->
-    <!-- Random Quote API Endpoint -->
-    <!-- https://quote-garden.onrender.com/api/v3/quotes/random -->
+
     <!--
     We will need to look at adding callback functions when our async functions complete
     with .then()  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
@@ -30,6 +29,74 @@
         // return a value from our function
         return rn
       }
+
+      const fetchCharacterJSON = async () => {
+        const randomIndex = randNumRange(0, 110)
+        const response = await fetch(
+          `https://rickandmortyapi.com/api/character/${randomIndex}`
+        )
+        // we also need an await here since it is dependent on another awaited variable
+        const result = await response.json()
+        // return to be used in a callback function later on
+        return result
+      }
+
+      const renderCharacterInfo = (data) => {
+        // grab the element on our page
+        const characterMessage = document.getElementById('message')
+        console.log('SUCCESS', data)
+
+        // ooooOOOOOooo destructuring our first object!
+        // const name = data.name
+        // const species  = data.species
+        const {name, species, origin, status} = data
+        // now we can make the same message as before but much shorter
+        const message = `${name} is a ${species} from ${origin.name} and they are ${status}.`
+        characterMessage.append(message)
+      }
+
+      const renderCharacterCard = (result) => {
+        const parentElement = document.getElementById('card')
+        // use template literals to form some HTML to insert
+        const headShot = `<img src=${result.image} />`
+
+        // insertAdjacentHTML(position, text)
+        parentElement.insertAdjacentHTML('afterbegin', headShot)
+
+        // use append to insert text into an existing element on the page
+        document.getElementById('characterName').append(result.name)
+
+        // store our table element as a var
+        const charInfo = document.getElementById('charInfo')
+        // destructuring
+        const {species, origin, status} = result
+        // write this out in HTML in the body first to check for syntax errors
+        const stats = `<tr>
+          <th>Species</th>
+          <td>${species}</td>
+        </tr>
+        <tr>
+          <th>Origin</th>
+          <td>${origin.name}</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td>${status}</td>
+        </tr>`
+
+        charInfo.insertAdjacentHTML('beforeend', stats)
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        fetchCharacterJSON()
+          .then((data) => {
+            renderCharacterInfo(data)
+            renderCharacterCard(data)
+          })
+          .catch((error) => {
+            console.error('OOPSIE', error)
+          })
+      })
     </script>
     <style type="text/css">
       /* Some custom fonts from google */
@@ -53,25 +120,17 @@
         /* from Oribton font documentation */
         font-family: 'Orbitron', sans-serif;
       }
-
-      #inspo {
-        font-family: 'Rock Salt', cursive;
-        width: 50%;
-        margin: 0 auto;
-      }
     </style>
   </head>
   <body>
     <div id="card">
+      <!-- afterbegin -->
       <h3 id="characterName"></h3>
-      <table id="charInfo"></table>
+      <table id="charInfo">
+        <!-- beforeend -->
+      </table>
       <!-- Add this for first function -->
       <div id="message"></div>
-    </div>
-
-    <div id="inspo">
-      <p class="fancy"></p>
-      <p class="plain"></p>
     </div>
   </body>
 </html>
