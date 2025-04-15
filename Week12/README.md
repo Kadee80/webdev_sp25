@@ -2,7 +2,7 @@
 
 Get started/Keep working on your final project! I recommend starting with containers and your grid system, rows and columns before filling out content. Just like the Midterm, your Final requires _at least one_ media query for mobile (<768px).
 
-If you are continuing with your midterm project, make sure you di enough work to warrant another project and presentation!
+If you are continuing with your midterm project, make sure you do enough work to warrant another project and presentation!
 
 ## Final Project Options:
 
