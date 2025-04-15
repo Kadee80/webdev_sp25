@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hello GSAP Tweens</title>
 
-    <style type="text/css" media="screen"></style>
+    <style type="text/css" media="screen">
+      #sb {
+        position: absolute;
+        top: 600px;
+        left: 0;
+      }
+    </style>
   </head>
   <body>
     <img src="./img/soccer-ball.png" id="sb" />
@@ -23,6 +29,46 @@
     -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <!-- Our Script using GSAP Library Functions -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // grab the soccer ball + store it as a variable so we can "kick" it
+      // const sb = document.getElementById('sb')
+      // querySelector returns the FIRST matching element on the page
+      const sb = document.querySelector('#sb')
+      // our arguments are
+      // 1- what we want to animate, we can pass in a element var, OR a selector
+      // 2- how long we want it to take, this is optional, we can also use the duration option property
+      // 3- the options object
+
+      gsap.to(sb, 2, {
+        x: 800,
+        y: -500,
+        rotation: 720,
+        scale: 0.5,
+        delay: 0.5,
+        ease: 'elastic.out',
+      })
+
+      gsap.to('.bball', 1, {
+        y: 500,
+        rotation: 360,
+        delay: 2,
+        ease: 'bounce.out',
+        stagger: {
+          each: 0.5,
+        },
+      })
+
+      // making a callback function to fire at the ernd of the animation sequence
+      const imDone = () => {
+        alert('I am DONE!')
+      }
+
+      // onComplete fires a callback function when the animation completes
+      gsap.to('#sb,.bball', 5, {
+        opacity: 0,
+        delay: 10,
+        onComplete: imDone,
+      })
+    </script>
   </body>
 </html>

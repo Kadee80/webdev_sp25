@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hello GSAP Tweens</title>
 
-    <style type="text/css" media="screen"></style>
+    <style type="text/css" media="screen">
+      #sb {
+        position: absolute;
+        top: 600px;
+        left: 0;
+      }
+    </style>
   </head>
   <body>
     <img src="./img/soccer-ball.png" id="sb" />
@@ -23,6 +29,43 @@
     -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <!-- Our Script using GSAP Library Functions -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+      // const sb = document.getElementById('sb')
+      const sb = document.querySelector('#sb')
+      // our arguments for .to() .from()
+      // 1- The thing we want to animate/tween
+      // 2- Optional - how long we want this tween to take
+      // 3- Options Object - this is where you list the properties you want to change
+      // 4- Optional - start time. - Next example
+      gsap.to(sb, 2, {
+        x: 800,
+        y: -500,
+        rotation: 720,
+        scale: 0.5,
+        ease: 'elastic.out',
+      })
+
+      gsap.to('.bball', 1, {
+        y: 500,
+        rotation: 360,
+        delay: 2,
+        ease: 'bounce.out',
+        stagger: {
+          each: 0.5,
+        },
+      })
+
+      // this arrow function will be passed in as a callback function in gsap
+      const imDone = () => {
+        alert('I am DONE!')
+      }
+
+      // onComplete - be careful with gsap versions because the usage changed over time
+      gsap.to('#sb, .bball', 5, {
+        opacity: 0,
+        delay: 10,
+        onComplete: imDone,
+      })
+    </script>
   </body>
 </html>
