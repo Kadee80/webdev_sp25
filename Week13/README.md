@@ -1,6 +1,6 @@
 # Final Presentations NEXT THURSDAY, MAY 1
 
-In order for your project to be considered complete for grading you will be **required to submit the following by Midnight, MAY 9**
+In order for your project to be considered complete for grading you will be **required to submit the following by Midnight, MAY 8**
 
 1. In Class Presentation
 2. README.md documentation
