@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add Map</title>
+    <style>
+      /*
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map.
+ */
+      #map {
+        height: 100%;
+      }
+
+      /*
+ * Optional: Makes the sample page fill the window. 
+ */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="location">
+      <p>Currently searching for location...</p>
+    </div>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- prettier-ignore -->
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "YOUR_API_KEY_HERE", v: "weekly"});</script>
+    <!-- Our Map Code -->
+    <script>
+      // Initialize and add the map
+      let map
+      // declare a global variable for our location div
+      let loc, lat, lon
+      document.addEventListener('DOMContentLoaded', () => {
+        loc = document.getElementById('location')
+        getLocation()
+      })
+
+      // function getLoction () {}
+      const getLocation = () => {
+        // we need to c heck if we CAN get the location
+        if (navigator.geolocation && navigator.geolocation.getCurrentPosition) {
+          // we just checked to see if geolocation exists using dot notation
+          // once we have it, it will be passed to a callback function that we also write
+          // the 2 param or argument are (callback function to pass the location info into, a error function)
+          navigator.geolocation.getCurrentPosition(setMapPosition, showError)
+        } else {
+          // this will fire if we dont have access to geolocation or the getCurrentPosition
+          // we need to display a message to the user
+          alert('Your browser either not not support geolocation.')
+        }
+      }
+
+      // once we call getCurrentPosition, it will pass a position object to setPosition since we passed that
+      // in as the callback function
+      const setMapPosition = (position) => {
+        lat = position.coords.latitude
+        lon = position.coords.longitude
+
+        loc.innerHTML = `<p>Latitude: ${lat} <br />Longitude: ${lon}</p>`
+
+        initMap(lat, lon)
+      }
+
+      const showError = (error) => {
+        //console.log('error', error)
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            loc.innerHTML = 'User denied the request for geolocation.'
+            break
+          case error.POSTION_UNAVAILBLE:
+            loc.innerHTML = 'The location info is not available.'
+            break
+          case error.TIMEOUT:
+            loc.innerHTML = 'The location request timed out.'
+            break
+          case error.UNKNOWN_ERROR:
+            loc.innerHTML = 'An unknown error occured.'
+            break
+          default:
+            loc.innerHTML = 'An unknown error occured.'
+            break
+        }
+      }
+
+      async function initMap(lat, lon) {
+        // Request needed libraries.
+        //@ts-ignore
+        const {Map} = await google.maps.importLibrary('maps')
+        // const {AdvancedMarkerElement} = await google.maps.importLibrary(
+        //   'marker'
+        // )
+
+        const position = {lat, lng: lon}
+
+        // The map, centered at Uluru
+        map = new Map(document.getElementById('map'), {
+          zoom: 18,
+          center: position,
+          // New Advnaced Markers require a Map ID, this is a paid feature now
+          mapId: 'DEMO_MAP_ID',
+        })
+
+        // The marker, needs map ID for this version
+        // const marker = new AdvancedMarkerElement({
+        //   map,
+        //   position,
+        //   title: 'My First Marker',
+        // })
+
+        // legacy marker code, free and it works
+        new google.maps.Marker({
+          position,
+          map,
+          title: 'Hello World!',
+        })
+      }
+    </script>
+  </body>
+</html>
