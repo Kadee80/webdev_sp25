@@ -12,9 +12,11 @@ Once you are signed in, create a project. Then enable the Maps API.
 
 Once you have a project with Maps API enabled, you should get a popup with your API KEY. Copy and paste it somewhere safe like your notepad.
 
-In order to use the new Advanced Marker features, we need a Map ID.
+In order to use the new Advanced Marker features, we need a Map ID. This is a paid feature, so instead of using the new markers, maybe we try the legacy version...
 
 [Create a New Map](https://developers.google.com/maps/documentation/javascript/map-ids/get-map-id)
+
+[Legacy Marker Examples](https://developers.google.com/maps/documentation/javascript/markers)
 
 Make sure you also copy and paste your Map ID into your notepad, or whereever you are keeping a safe copy of your API key.
 
