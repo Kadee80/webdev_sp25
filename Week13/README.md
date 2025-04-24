@@ -22,7 +22,7 @@ You will be presenting your final website projects MAY 1. Your presentation shou
 
 ## Source Code on Github
 
-Be sure to have a visible folder labeled FINAL in your repository with your source code by THURSDAY MAY 9. Within your final folder, add a README.md file containing a link to the live hosted site if applicable, and a second link to your documentation.
+Be sure to have a visible folder labeled FINAL in your repository with your source code by THURSDAY MAY 8. Within your final folder, add a README.md file containing a link to the live hosted site if applicable, and a second link to your documentation.
 
 You can add links with markdown as follows:
 
