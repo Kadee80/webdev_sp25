@@ -35,6 +35,7 @@ _IF we manage to get through all 18 presentations in one day, you get next Tuesd
 15. Abdul
 16. Harry
 17. Benjamin
+18. Samantha
 
 ## Section D - 4:00 - 5:50
 
@@ -49,7 +50,6 @@ _IF we manage to get through all 18 presentations in one day, you get next Tuesd
 9. Ethan
 10. Cynthia
 11. Luis
-12. Samantha
 13. Ting
 14. Lydia
 15. Chloe
