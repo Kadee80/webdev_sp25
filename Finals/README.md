@@ -18,7 +18,7 @@ _IF we manage to get through all 18 presentations in one day, you get next Tuesd
 
 ## Section C - 2:00 - 3:50
 
-1. Matthew
+1. Faiza
 2. Anya
 3. Eric
 4. Marc
@@ -35,7 +35,7 @@ _IF we manage to get through all 18 presentations in one day, you get next Tuesd
 15. Abdul
 16. Harry
 17. Benjamin
-18. Faiza
+18. Matthew
 
 ## Section D - 4:00 - 5:50
 
