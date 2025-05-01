@@ -31,11 +31,10 @@ _IF we manage to get through all 18 presentations in one day, you get next Tuesd
 11. Ella
 12. Abril
 13. Semehal
-14. Faven
+14. Matthew
 15. Abdul
 16. Harry
 17. Benjamin
-18. Matthew
 
 ## Section D - 4:00 - 5:50
 
