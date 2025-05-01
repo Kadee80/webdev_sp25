@@ -18,4 +18,42 @@ _IF we manage to get through all 18 presentations in one day, you get next Tuesd
 
 ## Section C - 2:00 - 3:50
 
+1. Matthew
+2. Anya
+3. Eric
+4. Marc
+5. Shad
+6. Tai
+7. Jackson
+8. Celine
+9. Jerry
+10. Daniela
+11. Ella
+12. Abril
+13. Semehal
+14. Faven
+15. Abdul
+16. Harry
+17. Benjamin
+18. Faiza
+
 ## Section D - 4:00 - 5:50
+
+1. Ben
+2. Blaise
+3. Grace
+4. Allyson
+5. Zhenwei
+6. Diana
+7. Yara
+8. Zeus
+9. Ethan
+10. Cynthia
+11. Luis
+12. Samantha
+13. Ting
+14. Lydia
+15. Chloe
+16. Ridwan
+17. Kayln
+18. Laila
